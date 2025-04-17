@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Transaction Data Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+    </style>
+</head>
+<body>
+    <h1>About the Transaction Data Generator</h1>
+    
+    <p>This tool generates realistic transaction data based on:</p>
+    <ul>
+        <li>A supplier ID you provide</li>
+        <li>A year for the transactions</li>
+        <li>A CSV file containing product IDs and prices</li>
+    </ul>
+    
+    <p>The generated data includes:</p>
+    <ul>
+        <li>Randomized transactions across 12 months</li>
+        <li>Realistic distribution across multiple branches</li>
+        <li>Calculated values based on product prices</li>
+        <li>Properly formatted invoice references</li>
+    </ul>
+    
+    <p><a href="{{ url_for('index') }}">Back to generator</a></p>
+</body>
+</html>

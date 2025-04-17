@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Download Transaction Data</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .stats { background-color: #f5f5f5; padding: 15px; margin-bottom: 20px; }
+        .btn { padding: 10px 15px; background-color: #4CAF50; color: white; text-decoration: none; display: inline-block; }
+    </style>
+</head>
+<body>
+    <h1>Your Transaction Data is Ready</h1>
+    
+    <div class="stats">
+        <h3>Generation Statistics:</h3>
+        <p><strong>Supplier ID:</strong> {{ stats.supplier_id }}</p>
+        <p><strong>Year:</strong> {{ stats.year }}</p>
+        <p><strong>Total Products:</strong> {{ stats.total_products }}</p>
+        
+        <h4>Monthly Units Distribution:</h4>
+        <ul>
+            {% for month, units in stats.units_per_month.items() %}
+                <li>{{ month|capitalize }}: {{ units }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+    <a href="{{ url_for('download_csv') }}" class="btn">Download CSV File</a>
+    <a href="{{ url_for('index') }}" style="margin-left: 10px;">Generate New File</a>
+</body>
+</html>
